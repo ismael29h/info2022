@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from ProyectoInfo2022.apps.AppBlog.views import frontpage, post_detail
+
 urlpatterns = [
+    path('',frontpage, name='frontapage'),
     path('admin/', admin.site.urls),
+    path('<slug:slug>/', post_detail, name='post_detail'),
 ]
