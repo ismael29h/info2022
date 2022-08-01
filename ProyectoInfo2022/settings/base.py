@@ -56,7 +56,7 @@ ROOT_URLCONF = 'ProyectoInfo2022.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(BASE_DIR), 'templates')],
+        'DIRS': [os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022\\templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,7 +121,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [ os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022\static'),
 ]
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'media')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022\media')
 
 
 
