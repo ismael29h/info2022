@@ -52,20 +52,20 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="index.html">INICIO<span class="sr-only"></span>
+              <a class="nav-link" href="{% url 'index' %}">INICIO<span class="sr-only"></span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">QUIENES SOMOS</a>
+              <a class="nav-link" href="{% url 'about' %}">QUIENES SOMOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">BANNERS</a>
+              <a class="nav-link" href="{% url 'blog' %}">BANNERS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post-details.html">POSTEOS</a>
+              <a class="nav-link" href="{% url 'post_detail' %}">POSTEOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contact.html">CONTACTO</a>
+              <a class="nav-link" href="{% url 'contact' %}">CONTACTO</a>
             </li>
           </ul>
         </div>
@@ -86,7 +86,7 @@
               <div class="meta-category">
                 <span>POST 1</span>
               </div>
-              <a href="post-details.html">
+              <a href="post_detail.html">
                 <h4>Titulo de prueba 1</h4>
               </a>
               <ul class="post-info">
@@ -104,7 +104,7 @@
               <div class="meta-category">
                 <span>POST 2</span>
               </div>
-              <a href="post-details.html">
+              <a href="post_detail.html">
                 <h4>Título de prueba 2</h4>
               </a>
               <ul class="post-info">
@@ -122,7 +122,7 @@
               <div class="meta-category">
                 <span>POST 3</span>
               </div>
-              <a href="post-details.html">
+              <a href="post_detail.html">
                 <h4>Título de Prueba 3</h4>
               </a>
               <ul class="post-info">
@@ -140,7 +140,7 @@
               <div class="meta-category">
                 <span>Post 4</span>
               </div>
-              <a href="post-details.html">
+              <a href="post_detail.html">
                 <h4>Titulo de prueba 4</h4>
               </a>
               <ul class="post-info">

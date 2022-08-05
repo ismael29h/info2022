@@ -1,0 +1,117 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Contenido -->
+<title>{{ post.title }}</title>
+<!-- Banner: inicio -->
+<div class="heading-page header-text">
+  <section class="page-heading">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="text-content">
+            <h2>{{ post.title }}</h2>
+            <h4>{{ post.intro }}</h4>
+            <h2></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<!-- Banner: fin -->
+
+<!--POST EN DETALLE-->
+<section class="blog-posts grid-system">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10">
+        <div class="all-blog-posts">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="blog-post">
+                <div class="blog-thumb">
+                  <img src="{% static 'assets/images/blog-post-02.jpg' %}" alt="">
+                </div>
+                <div class="down-content">
+                  <span>{{ post.title }}</span>
+                  <a href="{% url 'post_detail' post.slug %}">
+                    <h4>{{ post.title }}</h4>
+                  </a>
+                  <ul class="post-info">
+                    <li><a href="#">{{ post.date_added }}</a></li>
+                  </ul>
+                  <p>{{ post.body }}</p>
+                  <di class="post-options">
+                    <div class="row">
+                      <div class="col-6">
+                        <ul class="post-tags">
+                          <li><i class="fa fa-tags"></i></li>
+                          <li><a href="#">Tags?</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </di>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--COMENTARIOS-->
+          <div class="col-lg-12">
+            <div class="sidebar-heading">
+              <h2>Comentarios</h2>
+            </div>
+            {% for comment in post.comments.all %}
+            <div class="sidebar-item comments">
+              <div class="content">
+                <ul>
+
+                  <li>
+                    <div class="author-thumb">
+                      <img src="{% static 'assets/images/comment-author-01.jpg' %}" alt="">
+                    </div>
+                    <div class="right-content">
+                      <h4>{{ comment.name }}<span>{{ comment.date_added }}</span></h4>
+                      <p>{{ comment.body }}</p>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+            {% endfor %}
+
+          </div>
+
+          <!--COMENTARIO PROPIO-->
+          <div class="col-lg-12">
+            <div class="sidebar-item submit-comment">
+              <div class="sidebar-heading">
+                <h2>Tu comentario</h2>
+              </div>
+              <div class="content">
+
+                <form method="post" action=".">
+                  {% csrf_token %}
+
+                  {{ form.as_p }}
+
+                  <div class="field">
+                    <div class="control">
+                      <button class="button is-success">Enviar</button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+{% endblock %}

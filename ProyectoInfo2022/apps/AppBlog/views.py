@@ -10,6 +10,11 @@ def frontpage(request):
 
     return render(request, 'blog/frontpage.html', {'posts':posts})
 
+def banners(request):
+    posts = Post.objects.all()
+
+    return render(request, 'blog/blog.html', {'posts':posts})
+
 def post_detail(request, slug):
     post = Post.objects.get(slug=slug)
 

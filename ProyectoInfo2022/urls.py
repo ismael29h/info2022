@@ -17,32 +17,24 @@ from django.contrib import admin
 from django.urls import path
 
 from django.views.generic import TemplateView
-from ProyectoInfo2022.apps.AppBlog.views import frontpage, post_detail
+from ProyectoInfo2022.apps.AppBlog.views import frontpage, post_detail,banners
 
 urlpatterns = [
-    path('',frontpage, name='frontapage'),
+    path('',frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
     path('<slug:slug>/', post_detail, name='post_detail'),
     #--------------------
-    path(
-        route='index.html',
-        view=TemplateView.as_view(template_name='blog/index.html'),
-        name='index'
-    ),
+    path('index.html',frontpage, name='index'),
+    path('blog.html',banners,name='blog'),
     path(
         route='about.html',
         view=TemplateView.as_view(template_name='blog/about.html'),
         name='about'
     ),
     path(
-        route='blog.html',
-        view=TemplateView.as_view(template_name='blog/blog.html'),
-        name='blog'
-    ),
-    path(
-        route='post-details.html',
-        view=TemplateView.as_view(template_name='blog/post-details.html'),
-        name='post-details'
+        route='post_detail.html',
+        view=TemplateView.as_view(template_name='blog/post_detail.html'),
+        name='post_detail'
     ),
     path(
         route='contact.html',
