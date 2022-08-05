@@ -1,6 +1,4 @@
-{% load static %}
 <!DOCTYPE html>
-
 <html lang="en">
 
   <head>
@@ -8,25 +6,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="" content="">
+    <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
 
-    <title>Fundación Vientos de Cambio</title>
+    
 
     <!-- Bootstrap core CSS -->
     <link href="/ProyectoInfo2022/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 
-    <!-- Archivos adicionales CSS -->
+    <!-- Additional CSS Files -->
     <link rel="stylesheet" href="/ProyectoInfo2022/static/assets/css/fontawesome.css">
     <link rel="stylesheet" href="/ProyectoInfo2022/static/assets/css/templatemo-stand-blog.css">
     <link rel="stylesheet" href="/ProyectoInfo2022/static/assets/css/owl.css">
+<!--
 
+TemplateMo 551 Stand Blog
+
+https://templatemo.com/tm-551-stand-blog
+
+-->
   </head>
 
   <body>
 
-    <!-- ***** Precargador: inicio ***** -->
+    <!-- ***** Preloader Start ***** -->
     <div id="preloader">
         <div class="jumper">
             <div></div>
@@ -34,7 +38,7 @@
             <div></div>
         </div>
     </div>  
-    <!-- ***** Precargador: fin***** -->
+    <!-- ***** Preloader End ***** -->
 
     <!-- Header -->
     <header class="">
@@ -70,80 +74,47 @@
     </header>
 
     <!-- Contenido de página -->
-    <!-- Banners: inicio -->
-    <div class="main-banner header-text">  
-      <div class="container-fluid"> 
-        <div class="owl-banner owl-carousel">
-          
-          <div class="item">
-            <img src="/ProyectoInfo2022/static/assets/images/banner-item-01.jpg" alt="">
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>POST 1</span>
-                </div>
-                <a href="post-details.html"><h4>Titulo de prueba 1</h4></a>
-                <ul class="post-info">
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div class="item">
-            <img src="/ProyectoInfo2022/static/assets/images/banner-item-02.jpg" alt="">
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>POST 2</span>
-                </div>
-                <a href="/ProyectoInfo2022/static/post-details.html"><h4>Título de prueba 2</h4></a>
-                <ul class="post-info">
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div class="item">
-            <img src="/ProyectoInfo2022/static/assets/images/banner-item-03.jpg" alt="">
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>POST 3</span>
-                </div>
-                <a href="post-details.html"><h4>Título de Prueba 3</h4></a>
-                <ul class="post-info">
-                  
-                </ul>
-              </div>
-            </div>
-          </div>
-          
-          <div class="item">
-            <img src="/ProyectoInfo2022/static/assets/images/banner-item-04.jpg" alt="">
-            <div class="item-content">
-              <div class="main-content">
-                <div class="meta-category">
-                  <span>Post 4</span>
-                </div>
-                <a href="post-details.html"><h4>Titulo de prueba 4</h4></a>
-                <ul class="post-info">
-                  
-                </ul>
+    <title>Quienes somos</title>
+    <!-- Banner: Inicio--> 
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4>QUIENES SOMOS</h4>
+                <h2>Conocenos mejor...</h2>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-    <!--Banner Ends Here -->
     
-    <!--Contenido cambiante-->
-    {%  block content %}
+    <!-- Banners: fin -->
 
-    {% endblock %}
-
+    <section class="about-us">
+      <class="container">
+      	
+        <div class="row">
+          <div class="col-lg-12">
+            <img src="/ProyectoInfo2022/static/assets/images/about-us.jpg" alt="">
+              <p>Aqui va una descripción de la historia de la Fundación Vientos de cambio, qué hacen y demas...</p>
+          </div>
+        </div> 
+        
+        <div class="row">
+          <div class="col-lg-6">
+          <h4>Dos columnas: más información</h4>
+          	<p>Quisque bibendum cursus viverra. Mauris at ex ipsum. Aenean condimentum urna nisl, eget interdum ante euismod vel. Aliquam at metus sit amet nunc dapibus posuere.</p>
+          </div>
+          <div class="col-lg-6">
+          <h4>Dos columnas: más información</h4>
+          	<p>Maecenas et metus nisl. Morbi ac interdum metus. Aliquam erat volutpat. Donec posuere tortor vel volutpat consequat. Mauris sagittis magna vel tellus semper interdum et id sapien.</p>
+          </div>
+        </div> 
+      </div>
+    </section>
 
     <footer>
       <div class="container">
@@ -188,5 +159,3 @@
 
   </body>
 </html>
-
-
