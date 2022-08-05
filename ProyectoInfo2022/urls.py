@@ -16,10 +16,37 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from django.views.generic import TemplateView
 from ProyectoInfo2022.apps.AppBlog.views import frontpage, post_detail
 
 urlpatterns = [
     path('',frontpage, name='frontapage'),
     path('admin/', admin.site.urls),
     path('<slug:slug>/', post_detail, name='post_detail'),
+    #--------------------
+    path(
+        route='index.html',
+        view=TemplateView.as_view(template_name='blog/index.html'),
+        name='index'
+    ),
+    path(
+        route='about.html',
+        view=TemplateView.as_view(template_name='blog/about.html'),
+        name='about'
+    ),
+    path(
+        route='blog.html',
+        view=TemplateView.as_view(template_name='blog/blog.html'),
+        name='blog'
+    ),
+    path(
+        route='post-details.html',
+        view=TemplateView.as_view(template_name='blog/post-details.html'),
+        name='post-details'
+    ),
+    path(
+        route='contact.html',
+        view=TemplateView.as_view(template_name='blog/contact.html'),
+        name='contact'
+    ),
 ]

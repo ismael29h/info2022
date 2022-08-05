@@ -1,161 +1,170 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="TemplateMo">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
-
-    
-
-    <!-- Bootstrap core CSS -->
-    <link href="/ProyectoInfo2022/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+    rel="stylesheet">
 
 
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="/ProyectoInfo2022/static/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="/ProyectoInfo2022/static/assets/css/templatemo-stand-blog.css">
-    <link rel="stylesheet" href="/ProyectoInfo2022/static/assets/css/owl.css">
-<!--
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  <!--
 
 TemplateMo 551 Stand Blog
 
 https://templatemo.com/tm-551-stand-blog
 
 -->
-  </head>
+</head>
 
-  <body>
+<body>
 
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <!--LOGO FUNDACIÓN VIENTOS DE CAMBIO-->
-          <a class="navbar-brand" href="index.html"><h2><img src="/ProyectoInfo2022/static/assets/images/logo_vtos_cambio.JPG" max width="150"><em></em></h2></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">INICIO<span class="sr-only"></span>
-                </a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">QUIENES SOMOS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="blog.html">BANNERS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="post-details.html">POSTEOS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">CONTACTO</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
-    <!-- Contenido de página -->
-    <title>Quienes somos</title>
-    <!-- Banner: Inicio--> 
-    <div class="heading-page header-text">
-      <section class="page-heading">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="text-content">
-                <h4>QUIENES SOMOS</h4>
-                <h2>Conocenos mejor...</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <!-- ***** Preloader Start ***** -->
+  <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
     </div>
-    
-    <!-- Banners: fin -->
+  </div>
+  <!-- ***** Preloader End ***** -->
 
-    <section class="about-us">
-      <class="container">
-      	
-        <div class="row">
-          <div class="col-lg-12">
-            <img src="/ProyectoInfo2022/static/assets/images/about-us.jpg" alt="">
-              <p>Aqui va una descripción de la historia de la Fundación Vientos de cambio, qué hacen y demas...</p>
-          </div>
-        </div> 
-        
-        <div class="row">
-          <div class="col-lg-6">
-          <h4>Dos columnas: más información</h4>
-          	<p>Quisque bibendum cursus viverra. Mauris at ex ipsum. Aenean condimentum urna nisl, eget interdum ante euismod vel. Aliquam at metus sit amet nunc dapibus posuere.</p>
-          </div>
-          <div class="col-lg-6">
-          <h4>Dos columnas: más información</h4>
-          	<p>Maecenas et metus nisl. Morbi ac interdum metus. Aliquam erat volutpat. Donec posuere tortor vel volutpat consequat. Mauris sagittis magna vel tellus semper interdum et id sapien.</p>
-          </div>
-        </div> 
+  <!-- Header -->
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!--LOGO FUNDACIÓN VIENTOS DE CAMBIO-->
+        <a class="navbar-brand" href="index.html">
+          <h2><img src="{% static 'assets/images/logo_vtos_cambio.JPG' %}" max width="150"><em></em></h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">INICIO<span class="sr-only"></span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">QUIENES SOMOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blog.html">BANNERS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="post-details.html">POSTEOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">CONTACTO</a>
+            </li>
+          </ul>
+        </div>
       </div>
-    </section>
+    </nav>
+  </header>
 
-    <footer>
+  <!-- Contenido de página -->
+  <title>Quienes somos</title>
+  <!-- Banner: Inicio-->
+  <div class="heading-page header-text">
+    <section class="page-heading">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <ul class="social-icons">
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Linkedin</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-12">
-            <div class="copyright-text">
-              <p>Copyright 2022 | Design: <a rel="nofollow" href="" target="_parent">Informatorio 2022 | Grupo 6</a></p> 
+            <div class="text-content">
+              <h4>QUIENES SOMOS</h4>
+              <h2>Conocenos mejor...</h2>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
+  </div>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="/ProyectoInfo2022/static/vendor/jquery/jquery.min.js"></script>
-    <script src="/ProyectoInfo2022/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- Banners: fin -->
 
-    <!-- Scripts Adicionales-->
-    <script src="/ProyectoInfo2022/static/assets/js/custom.js"></script>
-    <script src="/ProyectoInfo2022/static/assets/js/owl.js"></script>
-    <script src="/ProyectoInfo2022/static/assets/js/slick.js"></script>
-    <script src="/ProyectoInfo2022/static/assets/js/isotope.js"></script>
-    <script src="/ProyectoInfo2022/static/assets/js/accordions.js"></script>
+  <section class="about-us">
+    <class="container">
 
-    <script language = "text/Javascript"> 
-      cleared[0] = cleared[1] = cleared[2] = 0; 
-      function clearField(t){                   
-      if(! cleared[t.id]){                     
-          cleared[t.id] = 1;  
-          t.value='';        
-          t.style.color='#fff';
-          }
+      <div class="row">
+        <div class="col-lg-12">
+          <img src="{% static 'assets/images/about-us.jpg' %}" alt="">
+          <p>Aqui va una descripción de la historia de la Fundación Vientos de cambio, qué hacen y demas...</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <h4>Dos columnas: más información</h4>
+          <p>Quisque bibendum cursus viverra. Mauris at ex ipsum. Aenean condimentum urna nisl, eget interdum ante
+            euismod vel. Aliquam at metus sit amet nunc dapibus posuere.</p>
+        </div>
+        <div class="col-lg-6">
+          <h4>Dos columnas: más información</h4>
+          <p>Maecenas et metus nisl. Morbi ac interdum metus. Aliquam erat volutpat. Donec posuere tortor vel volutpat
+            consequat. Mauris sagittis magna vel tellus semper interdum et id sapien.</p>
+        </div>
+      </div>
+      </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="social-icons">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Linkedin</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-12">
+          <div class="copyright-text">
+            <p>Copyright 2022 | Design: <a rel="nofollow" href="" target="_parent">Informatorio 2022 | Grupo 6</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- Scripts Adicionales-->
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <script src="{% static 'assets/js/owl.js' %}"></script>
+  <script src="{% static 'assets/js/slick.js' %}"></script>
+  <script src="{% static 'assets/js/isotope.js' %}"></script>
+  <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0;
+    function clearField(t) {
+      if (!cleared[t.id]) {
+        cleared[t.id] = 1;
+        t.value = '';
+        t.style.color = '#fff';
       }
-    </script>
+    }
+  </script>
 
-  </body>
+</body>
+
 </html>
