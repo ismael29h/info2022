@@ -32,17 +32,17 @@
             <div class="col-lg-6">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="{% static 'assets/images/blog-thumb-01.jpg' %}" alt="">
+                  <img src="{{ post.imagen.url }}" height: 100px; alt="">
                 </div>
                 <div class="down-content">
                   <span>{{ post.title }}</span>
-                  <a href="post_detail.html">
+                  <a href="{% url 'post_detail' post.slug %}">
                     <h4>{{ post.title }}</h4>
                   </a>
                   <ul class="post-info">
                     <li><a href="#">{{ post.date_added }}</a></li>
                   </ul>
-                  <p>{{ post.intro }}</p>
+                  <p>{{ post.intro|safe }}</p>
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-6">

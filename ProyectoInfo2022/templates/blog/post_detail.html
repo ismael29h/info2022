@@ -12,7 +12,7 @@
         <div class="col-lg-12">
           <div class="text-content">
             <h2>{{ post.title }}</h2>
-            <h4>{{ post.intro }}</h4>
+            <h4>{{ post.intro|safe }}</h4>
             <h2></h2>
           </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="col-lg-12">
               <div class="blog-post">
                 <div class="blog-thumb">
-                  <img src="{% static 'assets/images/blog-post-02.jpg' %}" alt="">
+                  <img src="{{ post.imagen.url }}" alt="">
                 </div>
                 <div class="down-content">
                   <span>{{ post.title }}</span>
@@ -44,7 +44,7 @@
                   <ul class="post-info">
                     <li><a href="#">{{ post.date_added }}</a></li>
                   </ul>
-                  <p>{{ post.body }}</p>
+                  <p>{{ post.body|safe }}</p>
                   <di class="post-options">
                     <div class="row">
                       <div class="col-6">
@@ -76,7 +76,7 @@
                     </div>
                     <div class="right-content">
                       <h4>{{ comment.name }}<span>{{ comment.date_added }}</span></h4>
-                      <p>{{ comment.body }}</p>
+                      <p>{{ comment.body|safe }}</p>
                     </div>
                   </li>
 

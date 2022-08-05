@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path
 
 from django.views.generic import TemplateView
+
+from django.conf.urls.static import static
+from django.conf import settings
+
 from ProyectoInfo2022.apps.AppBlog.views import frontpage, post_detail,banners
 
 urlpatterns = [
@@ -41,4 +45,4 @@ urlpatterns = [
         view=TemplateView.as_view(template_name='blog/contact.html'),
         name='contact'
     ),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
