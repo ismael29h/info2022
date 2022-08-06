@@ -3,16 +3,14 @@
 {% block content %}
 
 <!-- Contenido -->
-<title>Banners</title>
-<!-- Banner: inicio -->
+<!-- Publicaciones -->
 <div class="heading-page header-text">
   <section class="page-heading">
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <div class="text-content">
-            <h4>BANNERS</h4>
-            <h2>Recientes...</h2>
+            <marquee behavior="scroll" direction="right" scrolldelay="400"><h2><b>Noticias &#127991;</b></h2></marquee>
           </div>
         </div>
       </div>
@@ -20,7 +18,7 @@
   </section>
 </div>
 
-<!-- Banner: fin -->
+<!-- Publicaciones: fin -->
 
 <section class="blog-posts grid-system">
   <div class="container">
@@ -35,7 +33,7 @@
                   <img src="{{ post.imagen.url }}" height: 100px; alt="">
                 </div>
                 <div class="down-content">
-                  <span>{{ post.title }}</span>
+                  
                   <a href="{% url 'post_detail' post.slug %}">
                     <h4>{{ post.title }}</h4>
                   </a>
@@ -48,7 +46,7 @@
                       <div class="col-lg-6">
                         <ul class="post-tags">
                           <li><i class="fa fa-tags"></i></li>
-                          <li><a href="#">Tags?</a></li>
+                          <li><a href="#">Tags</a></li>
 
                         </ul>
                       </div>

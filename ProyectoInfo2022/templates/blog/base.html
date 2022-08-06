@@ -61,7 +61,7 @@
               <a class="nav-link" href="{% url 'about' %}">QUIENES SOMOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog' %}">POSTEOS</a>
+              <a class="nav-link" href="{% url 'blog' %}">NOTICIAS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}">CONTACTO</a>
@@ -73,8 +73,9 @@
   </header>
 
   <!-- Contenido de página -->
+ 
   <!-- Banners: inicio -->
-
+ 
   <!--Banner Ends Here -->
 
   <!--Contenido cambiante-->
@@ -82,14 +83,33 @@
 
   {% endblock %}
 
-
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
           <ul class="social-icons">
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Twitter</a></li>
+            <li><title>Icon-fb</title>
+              <link rel="stylesheet" href="{% static 'assets/css/estilo.css' %}">
+              <script src="https://cdn-icons-png.flaticon.com/512/145/145802.png" crossorigin="anonymous"></script>
+
+              <body>
+                <a href="https://www.facebook.com/orquestavientosdecambio" class="fa fa-facebook" target="_blank"></a>
+              
+              </body>
+            </li>
+              
+            <li><title>Icon-WhatsApp</title>
+              <link rel="stylesheet" href="{% static 'assets/css/estilo.css' %}">
+              <!--Icon-Font-->
+              <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+
+              <body>
+              <a href="https://api.whatsapp.com/send?phone=3644574664" class="btn-wsp" target="_blank">
+                <i class="fa fa-whatsapp icono"></i>
+              </a>
+              </body>
+            </li>  
+  
             <li><a href="#">Linkedin</a></li>
           </ul>
         </div>

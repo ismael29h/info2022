@@ -39,7 +39,7 @@
                 <div class="down-content">
                   <span>{{ post.title }}</span>
                   <a href="{% url 'post_detail' post.slug %}">
-                    <h4>{{ post.title }}</h4>
+                    
                   </a>
                   <ul class="post-info">
                     <li><a href="#">{{ post.date_added }}</a></li>
@@ -72,7 +72,7 @@
 
                   <li>
                     <div class="author-thumb">
-                      <img src="{% static 'assets/images/comment-author-01.jpg' %}" alt="">
+                      <img src="{% static 'assets/images/comment-author-01.png' %}" alt="">
                     </div>
                     <div class="right-content">
                       <h4>{{ comment.name }}<span>{{ comment.date_added }}</span></h4>
