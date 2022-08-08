@@ -1,4 +1,4 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 
@@ -38,8 +38,8 @@
                 </div>
                 <div class="down-content">
                   <span>{{ post.title }}</span>
-                  <a href="{% url 'post_detail' post.slug %}">
-                    
+                  <a href="{% url 'posts:post_detail' post.slug %}">
+
                   </a>
                   <ul class="post-info">
                     <li><a href="#">{{ post.date_added }}</a></li>

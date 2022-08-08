@@ -1,30 +1,34 @@
-{% extends 'blog/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% block content %}
 <div class="main-nammer header-text">
     <div class="scale-video">
+
         <body>
-            <p style="text-align:center"><video  width="640" height="480" style="border:0;" allowfullscreen="" muted autoplay>
-                <source src="{%static 'video.mp4'%}" type="video/mp4">
-            </video></p>
+            <p style="text-align:center"><video width="640" height="480" style="border:0;" allowfullscreen="" muted
+                    autoplay>
+                    <source src="{%static 'video.mp4'%}" type="video/mp4">
+                </video></p>
         </body>
-    </div> 
+    </div>
 </div>
 
 <div class="main-banner header-text">
     <div class="container-fluid">
         <div class="owl-banner owl-carousel">
-              
+
             {% for post in posts %}
             <div class="item">
-                <img style="border: 15px solid;color:beige" src="{{ post.imagen.url }}" alt=""width="300" height="300">
+                <img style="border: 15px solid;color:beige" src="{{ post.imagen.url }}" alt="" width="300" height="300">
                 <div class="item-content">
                     <div class="main-content">
                         <div class="meta-category">
                             <span>{{ post.title }}</span>
                         </div>
-                        <a href="{% url 'post_detail' post.slug %}">
-                            <button><h6>Leer mas</h6></button>
+                        <a href="{% url 'posts:post_detail' post.slug %}">
+                            <button>
+                                <h6>Leer mas</h6>
+                            </button>
                         </a>
                         <ul class="post-info">
                             <li><a href="#">{{ post.date_added }}</a></li>

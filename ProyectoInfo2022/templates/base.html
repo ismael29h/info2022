@@ -44,7 +44,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <!--LOGO FUNDACIÓN VIENTOS DE CAMBIO-->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="{% url 'posts:index' %}">
           <h2><img src="{% static 'assets/images/logo_vtos_cambio.JPG' %}" max width="150"><em></em></h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
@@ -54,14 +54,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="{% url 'index' %}">INICIO<span class="sr-only"></span>
+              <a class="nav-link" href="{% url 'posts:index' %}">INICIO<span class="sr-only"></span>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">QUIENES SOMOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'blog' %}">NOTICIAS</a>
+              <a class="nav-link" href="{% url 'posts:blog' %}">NOTICIAS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}">CONTACTO</a>
@@ -73,9 +73,9 @@
   </header>
 
   <!-- Contenido de página -->
- 
+
   <!-- Banners: inicio -->
- 
+
   <!--Banner Ends Here -->
 
   <!--Contenido cambiante-->
@@ -88,28 +88,30 @@
       <div class="row">
         <div class="col-lg-12">
           <ul class="social-icons">
-            <li><title>Icon-fb</title>
+            <li>
+              <title>Icon-fb</title>
               <link rel="stylesheet" href="{% static 'assets/css/estilo.css' %}">
               <script src="https://cdn-icons-png.flaticon.com/512/145/145802.png" crossorigin="anonymous"></script>
 
               <body>
                 <a href="https://www.facebook.com/orquestavientosdecambio" class="fa fa-facebook" target="_blank"></a>
-              
+
               </body>
             </li>
-              
-            <li><title>Icon-WhatsApp</title>
+
+            <li>
+              <title>Icon-WhatsApp</title>
               <link rel="stylesheet" href="{% static 'assets/css/estilo.css' %}">
               <!--Icon-Font-->
               <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 
               <body>
-              <a href="https://api.whatsapp.com/send?phone=3644574664" class="fa fa-whatsapp icono" target="_blank">
-              </a>
+                <a href="https://api.whatsapp.com/send?phone=3644574664" class="fa fa-whatsapp icono" target="_blank">
+                </a>
               </body>
-            </li>  
-  
-            <li><a href="https://www.instagram.com/fvientosdecambio"  class="fa fa-instagram" target="_blank"></a></li>
+            </li>
+
+            <li><a href="https://www.instagram.com/fvientosdecambio" class="fa fa-instagram" target="_blank"></a></li>
           </ul>
         </div>
         <div class="col-lg-12">

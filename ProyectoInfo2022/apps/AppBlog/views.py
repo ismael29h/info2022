@@ -8,12 +8,12 @@ from .forms import CommentForm
 def frontpage(request):
     posts = Post.objects.all()
 
-    return render(request, 'blog/frontpage.html', {'posts':posts})
+    return render(request, 'posts/index.html', {'posts':posts})
 
 def banners(request):
     posts = Post.objects.all()
 
-    return render(request, 'blog/blog.html', {'posts':posts})
+    return render(request, 'posts/blog.html', {'posts':posts})
 
 def post_detail(request, slug):
     post = Post.objects.get(slug=slug)
@@ -30,4 +30,4 @@ def post_detail(request, slug):
     else:
         form = CommentForm()
 
-    return render(request, 'blog/post_detail.html', {'post': post, 'form': form})
+    return render(request, 'posts/detail.html', {'post': post, 'form': form})

@@ -14,35 +14,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from django.views.generic import TemplateView
 
 from django.conf.urls.static import static
 from django.conf import settings
 
-from ProyectoInfo2022.apps.AppBlog.views import frontpage, post_detail,banners
-
 urlpatterns = [
-    path('',frontpage, name='frontpage'),
     path('admin/', admin.site.urls),
-    path('<slug:slug>/', post_detail, name='post_detail'),
-    #--------------------
-    path('index.html',frontpage, name='index'),
-    path('blog.html',banners,name='blog'),
+    # Posts y comentarios
+    path('', include(('ProyectoInfo2022.apps.AppBlog.urls', 'AppBlog'), namespace='posts')),
+    # Acerca de...
     path(
         route='about.html',
-        view=TemplateView.as_view(template_name='blog/about.html'),
+        view=TemplateView.as_view(template_name='about.html'),
         name='about'
     ),
-    path(
-        route='post_detail.html',
-        view=TemplateView.as_view(template_name='blog/post_detail.html'),
-        name='post_detail'
-    ),
+    # Contacto
     path(
         route='contact.html',
-        view=TemplateView.as_view(template_name='blog/contact.html'),
+        view=TemplateView.as_view(template_name='contact.html'),
         name='contact'
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
