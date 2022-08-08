@@ -25,6 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Posts y comentarios
     path('', include(('ProyectoInfo2022.apps.AppBlog.urls', 'AppBlog'), namespace='posts')),
+    # Usuarios
+    path('', include(('ProyectoInfo2022.apps.AppUsers.urls', 'AppUsers'), namespace='usuarios')),
     # Acerca de...
     path(
         route='about.html',

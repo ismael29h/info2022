@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ProyectoInfo2022.apps.AppBlog.apps.AppblogConfig',
+    'ProyectoInfo2022.apps.AppUsers.apps.AppusersConfig',
     'bootstrap4',
     'ckeditor',
 ]
