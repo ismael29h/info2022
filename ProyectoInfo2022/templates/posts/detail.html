@@ -89,30 +89,22 @@
 
           <!--COMENTARIO PROPIO-->
           {% if user.is_authenticated %}
-          <div class="col-lg-12">
-            <div class="sidebar-item submit-comment">
-              <div class="sidebar-heading">
-                <h2>Tu comentario</h2>
-              </div>
-              <div class="content">
-
-                <form method="post" action=".">
-                  {% csrf_token %}
-
-                  {{ form.as_p }}
-
-                  <div class="field">
-                    <div class="control">
-                      <button class="button is-success">Enviar</button>
-                    </div>
-                  </div>
-                </form>
-
-              </div>
+          <div class="card my-4">
+            <h5 class="card-header">Deja un comentario:</h5>
+            <div class="card-body">
+              <form method="POST" action="{% url 'posts:post_detail' post.slug %}">
+                {% csrf_token %}
+                <input type="hidden" name="url" value="{{post.url}}" />
+                <input type="hidden" name="post" value="{{post.id}}" />
+                <div class="form-group">
+                  <textarea class="form-control" name="comment" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+              </form>
             </div>
           </div>
-          {% else %}
           {% endif %}
+
         </div>
       </div>
     </div>
