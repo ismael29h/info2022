@@ -5,7 +5,7 @@
     <div class="scale-video">
 
         <body>
-            <p style="text-align:center"><video width="640" height="480" style="border: 2px;;" allowfullscreen="" muted
+            <p style="text-align:center"><video width="640" height="480"  allowfullscreen="" muted
                     autoplay>
                     <source src="{%static 'video.mp4'%}" type="video/mp4">
                 </video></p>
@@ -22,7 +22,7 @@
             {% for post in posts %}
         
             <div class="item">
-                <img style="border: 15px solid;color:beige" src="{{ post.imagen.url }}" alt="" width="300" height="300">
+                <img style="border: 1px solid;color:#021616 " src="{{ post.imagen.url }}" alt="" width="300" height="300">
                 <div class="item-content">
                     <div class="main-content">
                         <div class="meta-category">
