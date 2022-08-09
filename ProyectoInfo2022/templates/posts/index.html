@@ -5,7 +5,7 @@
     <div class="scale-video">
 
         <body>
-            <p style="text-align:center"><video width="640" height="480" style="border:0;" allowfullscreen="" muted
+            <p style="text-align:center"><video width="640" height="480" style="border: 2px;;" allowfullscreen="" muted
                     autoplay>
                     <source src="{%static 'video.mp4'%}" type="video/mp4">
                 </video></p>
@@ -13,11 +13,14 @@
     </div>
 </div>
 
+
+
 <div class="main-banner header-text">
     <div class="container-fluid">
         <div class="owl-banner owl-carousel">
 
             {% for post in posts %}
+        
             <div class="item">
                 <img style="border: 15px solid;color:beige" src="{{ post.imagen.url }}" alt="" width="300" height="300">
                 <div class="item-content">
@@ -36,6 +39,7 @@
                     </div>
                 </div>
             </div>
+          
             {% endfor %}
         </div>
 
