@@ -50,7 +50,7 @@
                       <div class="col-6">
                         <ul class="post-tags">
                           <li><i class="fa fa-tags"></i></li>
-                          <li><a href="#">Tags?</a></li>
+                          <li><a href="#">Etiquetas</a></li>
                         </ul>
                       </div>
                     </div>
@@ -58,13 +58,19 @@
                 </div>
               </div>
             </div>
+            <p>
+              <ul>
+                <div class="fb-like" data-href="{{request.build_absolute_uri}}" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
+              </ul>
+            </p>
           </div>
 
           <!--COMENTARIOS-->
           <div class="col-lg-12">
             <div class="sidebar-heading">
-              <h2>Comentarios</h2>
+              <div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-width="" data-numposts="5"></div>
             </div>
+            <!--No COMENTARIOS QUIT
             {% for comment in post.comments.all %}
             <div class="sidebar-item comments">
               <div class="content">
@@ -84,6 +90,7 @@
               </div>
             </div>
             {% endfor %}
+            -->
 
           </div>
 
