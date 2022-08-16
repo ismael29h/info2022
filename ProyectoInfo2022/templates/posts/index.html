@@ -2,11 +2,16 @@
 {% load static %}
 {% block content %}
 
+
+<!--VIDEO-->
+<hr>
+<hr>
+<hr>
 <div class="main-nammer header-text">
     <div class="scale-video">
+
         <body>
-            <p style="text-align:center"><video width="640" height="480"  allowfullscreen="" muted
-                    autoplay>
+            <p style="text-align:center"><video width="640" height="480" allowfullscreen="" muted autoplay>
                     <source src="{%static 'video.mp4'%}" type="video/mp4">
                 </video></p>
         </body>
@@ -15,31 +20,36 @@
 
 
 
+
 <div class="main-banner header-text">
     <div class="container-fluid">
         <div class="owl-banner owl-carousel">
 
             {% for post in posts %}
-        
+
             <div class="item">
-                <img style="border: 1px solid;color:#021616 " src="{{ post.imagen.url }}" alt="" width="300" height="300">
+                <img style="border: 1px solid;color:#021616 " src="{{ post.imagen.url }}" alt="" width="300"
+                    height="300">
                 <div class="item-content">
                     <div class="main-content">
                         <div class="meta-category">
-                            <span>{{ post.title }}</span>
+                            <a href="{% url 'posts:post_detail' post.slug %}">
+                                <span>{{ post.title }}</span>
+                            </a>
                         </div>
+                        <!--
                         <a href="{% url 'posts:post_detail' post.slug %}">
                             <button>
                                 <h6>Leer mas</h6>
                             </button>
-                        </a>
+                        </a>-->
                         <ul class="post-info">
                             <li><a href="#">{{ post.date_added }}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-          
+
             {% endfor %}
         </div>
 
