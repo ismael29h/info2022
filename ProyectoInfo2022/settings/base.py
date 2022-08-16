@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'ProyectoInfo2022.apps.AppUsers.apps.AppusersConfig',
     'bootstrap4',
     'ckeditor',
+    'psycopg2',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,12 @@ WSGI_APPLICATION = 'ProyectoInfo2022.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'info2022', 
+        'USER': 'postgres', 
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1', 
+        'PORT': '5432',
     }
 }
 
