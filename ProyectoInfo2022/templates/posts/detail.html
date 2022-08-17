@@ -68,22 +68,33 @@
             </div>
 
           </div>
+
+          <!--BOTONES DE FACEBOOK-->
+          <p>
+          <ul>
+            <div class="fb-like" data-href="{{request.build_absolute_uri}}" data-width="" data-layout="button"
+              data-action="like" data-size="large" data-share="true"></div>
+          </ul>
+          </p>
+
+
+
           <!--TAB-->
           <div class="container">
 
             <!-- Nav tabs -->
             <ul class="nav nav-tabs">
               <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#login">Comenta...</a>
+                <a class="nav-link active" data-toggle="tab" href="#face">Comentarios</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#face">¡Comenta con Facebook!</a>
+                <a class="nav-link" data-toggle="tab" href="#login">Alumnos</a>
               </li>
             </ul>
 
             <!-- Tab content -->
             <div class="tab-content">
-              <div class="tab-pane container active" id="login">
+              <div class="tab-pane container fade" id="login">
 
                 <!--COMENTARIOS CON LOGIN-->
                 {% for comment in post.comments.all %}
@@ -106,6 +117,12 @@
                 {% endfor %}
 
                 {% if user.is_authenticated %}
+                <!--LOGOUT-->
+                <hr>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'usuarios:logout' %}">DESCONECTARSE</a>
+                </li>
+                <!---->
                 <div class="card my-4">
                   <h5 class="card-header">Deja un comentario:</h5>
                   <div class="card-body">
@@ -120,17 +137,28 @@
                     </form>
                   </div>
                 </div>
+                {% else %}
+                <hr>
+                <i>
+                  <h6>Esta sección es para comunicarnos mejor con nuestros alumnos.</h6>
+                </i>
+                <i>
+                  <h6>Sólo los usuarios registrados pueden comentar aquí.</h6>
+                </i>
+                <!--LOGIN-->
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'usuarios:login' %}">INICIAR SESIÓN</a>
+                </li>
+                <!--El registro de usuarios se hará vía "admin" para sus alumnos
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'usuarios:registro' %}">REGISTRARSE</a>
+            </li>
+          -->
                 {% endif %}
 
               </div>
-              <div class="tab-pane container fade" id="face">
+              <div class="tab-pane container active" id="face">
                 <!--COMENTARIOS CON FACEBOOK-->
-                <p>
-                <ul>
-                  <div class="fb-like" data-href="{{request.build_absolute_uri}}" data-width="" data-layout="button"
-                    data-action="like" data-size="large" data-share="true"></div>
-                </ul>
-                </p>
                 <div class="col-lg-12">
                   <div class="sidebar-heading">
                     <div class="fb-comments" data-href="{{request.build_absolute_uri}}" data-width="" data-numposts="5">
@@ -140,18 +168,8 @@
 
                 </div>
               </div>
-              <div class="tab-pane container fade" id="menu2">...</div>
             </div>
           </div>
-
-
-
-
-
-
-
-
-          <!--COMENTARIOS-->
 
         </div>
       </div>
