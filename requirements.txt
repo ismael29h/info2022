@@ -1,5 +1,11 @@
+asgiref==3.5.2
+beautifulsoup4==4.11.1
 Django==4.0
 django-bootstrap4==22.1
 django-ckeditor==6.4.2
+django-js-asset==2.0.0
 Pillow==8.4.0
 psycopg2==2.9.3
+soupsieve==2.3.2.post1
+sqlparse==0.4.2
+tzdata==2022.2
