@@ -34,27 +34,28 @@
                 <div class="blog-thumb">
                   <img src="{{ post.imagen.url }}" height: 100px; alt="">
                 </div>
-                <div class="down-content">
+                <!--<div class="down-content"> (1)-->
 
-                  <a href="{% url 'posts:post_detail' post.slug %}">
-                    <h4>{{ post.title }}</h4>
-                  </a>
-                  <ul class="post-info">
-                    <li><a href="#">{{ post.date_added }}</a></li>
-                  </ul>
-                  <p>{{ post.intro|safe }}</p>
+                <a href="{% url 'posts:post_detail' post.slug %}">
+                  <h4>{{ post.title }}</h4>
+                </a>
+                <ul class="post-info">
+                  <li><a href="#">{{ post.date_added }}</a></li>
+                </ul>
+                <p>{{ post.intro|safe }}</p>
+                <!--ETIQUETAS
                   <div class="post-options">
                     <div class="row">
                       <div class="col-lg-6">
                         <ul class="post-tags">
                           <li><i class="fa fa-tags"></i></li>
                           <li><a href="#">Tags</a></li>
-
                         </ul>
                       </div>
                     </div>
                   </div>
-                </div>
+                  -->
+                <!--</div>-->
               </div>
             </div>
             {% endfor %}
