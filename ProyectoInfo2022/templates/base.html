@@ -6,14 +6,19 @@
 
 <head>
 
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="">
   <meta name="" content="">
+  <link
+  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
   <link
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
     rel="stylesheet">
 
+ 
   <title>Fundación Vientos de Cambio</title>
   <link rel="icon" href="{% static 'assets/images/logo_vtos_cambio.JPG' %}">
   <!-- Bootstrap core CSS -->
@@ -24,6 +29,7 @@
   <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  
 
 </head>
 
@@ -38,6 +44,26 @@
     </div>
   </div>
   <!-- ***** Precargador: fin***** -->
+  <!--barra social-->
+  <div class="fabs" onclick="toggleBtn()">
+    <div class="action">
+      <i class="fas fa-plus" id="add"></i>
+      <i class="fas fa-times" id="remove" style="display: none"></i>
+    </div>
+
+      <div class="btns">
+        <a href="https://www.facebook.com/orquestavientosdecambio" class="btn" style="background: #3b5999"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://api.whatsapp.com/send?phone=3644574664" class="btn" style="background: #25D366"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a href="https://www.instagram.com/fvientosdecambio" class="btn" style="background:#e4405f"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+  <!--finsocial--> 
 
   <!-- Header -->
   <header class="">
@@ -105,20 +131,22 @@
     </nav>
       </nav> 
     </nav>
-      </nav> 
+      </nav>
   </header>
 
   <!-- Contenido de página -->
-
+ 
   <!-- Banners: inicio -->
+   
 
+
+    
   <!--Banner Ends Here -->
 
   <!--Contenido cambiante-->
-  <hr>
-  <hr>
-  <hr>
+ 
   {% block content %}
+  
 
   {% endblock %}
 
@@ -186,6 +214,7 @@
       </div>
     </div>
   </footer>
+ 
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -210,6 +239,33 @@
   </script>
 
 </body>
+<script>
+  function toggleBtn() {
+    const Btns = document.querySelector(".btns");
+    const add = document.getElementById("add");
+    const remove = document.getElementById("remove");
+    const btn = document.querySelector(".btns").querySelectorAll("a");
+    Btns.classList.toggle("open");
+    if (Btns.classList.contains("open")) {
+      remove.style.display = "block";
+      add.style.display = "none";
+      btn.forEach((e, i) => {
+        setTimeout(() => {
+          bottom = 40 * i;
+          e.style.bottom = bottom + "px";
+          console.log(e);
+        }, 100 * i);
+      });
+    } else {
+      add.style.display = "block";
+      remove.style.display = "none";
+      btn.forEach((e, i) => {
+        e.style.bottom = "0px";
+      });
+    }
+  }
+</script>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0" nonce="kSW5OqyE"></script>
+
 </html>
