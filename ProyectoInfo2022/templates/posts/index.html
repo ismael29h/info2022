@@ -2,28 +2,7 @@
 {% load static %}
 {% block content %}
 
-
-<<<<<<< HEAD
-=======
-<!--VIDEO-->
-<hr>
-<hr>
-<hr>
-<div class="main-nammer header-text">
-    <div class="scale-video">
-
-        <body>
-            <p style="text-align:center"><video width="640" height="480" allowfullscreen="" muted autoplay>
-                    <source src="{%static 'video.mp4'%}" type="video/mp4">
-                </video></p>
-        </body>
-    </div>
-</div>
->>>>>>> cd6a346da859eb4183f5de75296e4f6cd48f08a3
-
-
-
-
+<!--Carousel-->
 <div class="main-banner header-text">
     <div class="container-fluid">
         <div class="owl-banner owl-carousel">
@@ -31,23 +10,30 @@
             {% for post in posts %}
 
             <div class="item">
-                <img style="border: 1px solid;color:#021616 " src="{{ post.imagen.url }}" alt="" width="300"
-                    height="300">
+                <div class="meta-category">
+                    <!--    <a href="{% url 'posts:post_detail' post.slug %}">-->
+                    <span style="color:rgb(43, 30, 7)">
+                        <h5><b>
+                                <center>{{ post.title }}</center>
+                            </b></h5>
+                    </span>
+                    <!--</a>-->
+                </div>
+                <img src="{{ post.imagen.url }}" alt="" width="300" height="300">
                 <div class="item-content">
                     <div class="main-content">
-                        <div class="meta-category">
-                            <a href="{% url 'posts:post_detail' post.slug %}">
-                                <span>{{ post.title }}</span>
-                            </a>
-                        </div>
-                        <!--
+
+
                         <a href="{% url 'posts:post_detail' post.slug %}">
-                            <button>
-                                <h6>Leer mas</h6>
+                            <p></p>
+                            <button type="submit" class="btn btn-primary"
+                                style="height:33px;width:87px;line-height: 50px">
+                                <h6>Leer más</h6>
                             </button>
                         </a>-->
                         <ul class="post-info">
-                            <li><a href="#">{{ post.date_added }}</a></li>
+                            <p></p>
+                            <p>{{ post.date_added }}</p>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +42,20 @@
             {% endfor %}
         </div>
 
+    </div>
+</div>
 
+
+<!--VIDEO-->
+<div class="main-nammer header-text">
+    <div class="scale-video">
+
+        <body>
+            <hr>
+            <p style="text-align:center"><video width="640" height="480" allowfullscreen="" muted autoplay>
+                    <source src="{%static 'video.mp4'%}" type="video/mp4">
+                </video></p>
+        </body>
     </div>
 </div>
 {% endblock %}
