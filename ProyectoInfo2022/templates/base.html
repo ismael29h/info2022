@@ -84,18 +84,21 @@
               <a class="nav-link" href="{% url 'about' %}">QUIENES SOMOS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'posts:blog' %}">NOTICIAS</a>
+              <a class="nav-link" href="{% url 'posts:blog' %}">ÚLTIMAS NOTICIAS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}">CONTACTO</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'usuarios:logout' %}">DESCONECTARSE</a>
+              <a class="nav-link" href="admin/" style="color:rgb(228, 27, 27)">ADMINISTRAR WEB</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'usuarios:logout' %}">SALIR</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'usuarios:login' %}">INICIAR SESIÓN</a>
+              <a class="nav-link" href="{% url 'usuarios:login' %}">ENTRAR</a>
             </li>
             {% endif %}
             <nav class="navbar navbar-dark bg-dark">
