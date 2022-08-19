@@ -11,15 +11,13 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <meta name="description" content="">
   <meta name="" content="">
-  <link
-  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/fontell.css' %}">
   <link
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
     rel="stylesheet">
 
- 
   <title>Fundación Vientos de Cambio</title>
   <link rel="icon" href="{% static 'assets/images/logo_vtos_cambio.JPG' %}">
   <!-- Bootstrap core CSS -->
@@ -31,6 +29,12 @@
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
 
+  <!-- nav-tab -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -38,9 +42,6 @@
   <!-- ***** Precargador: inicio ***** -->
   <div id="preloader">
     <div class="jumper">
-      <div></div>
-      <div></div>
-      <div></div>
     </div>
   </div>
   <!-- ***** Precargador: fin***** -->
@@ -51,19 +52,16 @@
       <i class="fas fa-times" id="remove" style="display: none"></i>
     </div>
 
-      <div class="btns">
-        <a href="https://www.facebook.com/orquestavientosdecambio" class="btn" style="background: #3b5999"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="https://api.whatsapp.com/send?phone=3644574664" class="btn" style="background: #25D366"
-          ><i class="fab fa-whatsapp"></i
-        ></a>
-        <a href="https://www.instagram.com/fvientosdecambio" class="btn" style="background:#e4405f"
-          ><i class="fab fa-instagram"></i
-        ></a>
-      </div>
+    <div class="btns">
+      <a href="https://www.facebook.com/orquestavientosdecambio" class="btn" style="background: #3b5999"><i
+          class="fab fa-facebook-f"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=3644574664" class="btn" style="background: #25D366"><i
+          class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/fvientosdecambio" class="btn" style="background:#e4405f"><i
+          class="fab fa-instagram"></i></a>
     </div>
-  <!--finsocial--> 
+  </div>
+  <!--finsocial-->
 
   <!-- Header -->
   <header class="">
@@ -92,61 +90,25 @@
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}">CONTACTO</a>
             </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'usuarios:logout' %}">DESCONECTARSE</a>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'usuarios:login' %}">INICIAR SESIÓN</a>
-            </li>
-            {% endif %}
-                <nav class="navbar navbar-dark bg-dark">
-                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-                </nav>
-              </ul>
-            </div>  
+            <nav class="navbar navbar-dark bg-dark">
+              <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </nav>
+          </ul>
         </div>
-            </div>  
-        </div>
-            </div>  
-        </div>
-            </div>  
-        </div>
-            </div>  
-            </div>  
       </div>
-            </div>  
-          </div>  
-        </div>
-      </nav> 
+
     </nav>
-    </nav>
-    </nav>
-      </nav> 
-    </nav>
-      </nav> 
-    </nav>
-      </nav> 
-    </nav>
-      </nav> 
+
   </header>
 
-  <!-- Contenido de página -->
- 
-  <!-- Banners: inicio -->
-   
-
-
-    
-  <!--Banner Ends Here -->
-
-  <!--Contenido cambiante-->
- 
+  <hr>
+  <hr>
+  <hr>
   {% block content %}
-  
 
   {% endblock %}
 
@@ -217,7 +179,6 @@
       </div>
     </div>
   </footer>
- 
 
   <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
@@ -269,5 +230,7 @@
   }
 </script>
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0" nonce="kSW5OqyE"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v14.0"
+  nonce="kSW5OqyE"></script>
+
 </html>
