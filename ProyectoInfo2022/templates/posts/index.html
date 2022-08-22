@@ -2,7 +2,199 @@
 {% load static %}
 {% block content %}
 
+<!--------------------------------------
+HEADER
+--------------------------------------->
+<div class="container">
+	<div class="jumbotron jumbotron-fluid mb-3 pt-0 pb-0 bg-lightblue position-relative">
+		<div class="pl-4 pr-0 h-100 tofront">
+			<div class="row justify-content-between">
+				<div class="col-md-6 pt-6 pb-6 align-self-center">
+					<h1 class="secondfont mb-3 font-weight-bold">MISIÓN</h1>
+					<p class="mb-3">
+						Promover el intercambio cultural y el desarrollo humano a través de la educación, la palabra y la música, favoreciendo la inclusión de niños, jóvenes y adultos en situación de riesgo. Utilizar el arte y el lenguaje como pilares fundamentales. Promover y profundizar el estudio de la música como una alternativa creadora, de disciplina personal y proyecto de vida, que brinde posibilidades a los jóvenes ayudándolos a profesionalizar el arte y adoptándolo como medio de vida. Impulsar la creación de orquestas infantiles y juveniles entendiendo estos espacios como una herramienta de transformación social.
+					</p>
+					<a href="{% url 'about' %}" class="btn-primary">Leer Mas</a>
+				</div>
+				<div class="col-md-6 d-none d-md-block pr-0"><img src="{% static 'assets/images/about-us-2.jpg' %}" ></div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Header -->
+<!--------------------------------------
+MAIN
+--------------------------------------->
+    
+<div class="container pt-4 pb-4">
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="card border-0 mb-4 box-shadow h-xl-300">              
+                <div style="background-clip: border-box; height: 50px;    background-size: cover;    background-repeat: no-repeat;"></div>               
+				<div class="card-body px-0 pb-0 d-flex flex-column align-items-start">
+					<h2 class="h4 font-weight-bold">
+					<a class="text-dark" href="https://www.univision.com/explora/los-beneficios-de-la-musica-clasica-en-el-cuerpo" >Los beneficios de la música clásica en el cuerpo</a>
+					</h2>
+					<p class="card-text">
+						Siempre hemos escuchado de los múltiples beneficios de la música clásica en el cuerpo tras la escucha prolongada y habitual de una melodía. Estudios han demostrado la mejora en las respuestas de crecimiento de plantas a las que se pone música clásica.
+						Muchas veces al escuchar una música predilecta, muchos de nosotros hemos sentido escalofríos o esa sensación de júbilo indescriptible. Esto se debería a que estimula las mismas áreas del lenguaje y el habla en el córtex cerebral, ya que la música tendría el mismo efecto de calidez que se produce al escuchar una voz humana.
+					</p>
+					<!--
+					<div>
+						<small class="d-block"><a class="text-muted" href="./author.html">Favid Rick</a></small>
+						<small class="text-muted">Dec 12 &middot; 5 min read</small>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<div class="flex-md-row mb-4 box-shadow h-xl-300">
+				<div class="mb-3 d-flex align-items-center">
+					<div class="pl-3">
+						<video width="380" height="320"  muted autoplay>
+							<source src="{%static 'fronmusic.mp4'%}" type="video/mp4">
+						</video>
+					</div>	
+				</div>	
+			</div>
+		</div>
+	</div>
+</div>
+    
+<div class="container">
+	<div class="row justify-content-between">
+		<div class="col-md-8">
+			<h5 class="font-weight-bold spanborder"><span>Publicaciones</span></h5>
+			
+				
+					<div class="owl-banner owl-carousel">
+			
+						{% for post in posts %}
+			
+						<div class="item">
+							<div class="meta-category">
+								<a href="{% url 'posts:post_detail' post.slug %}">
+								
+								<span style="color:rgb(43, 30, 7)">
+									<h5><b>
+											<center>{{ post.title }}</center>
+										</b></h5>
+								</span>
+							
+							
+							</div>
+							<img src="{{ post.imagen.url }}" alt="" width="300" height="300">
+							<div class="item-content">
+								<div class="main-content">
+			
+			
+									<a href="{% url 'posts:post_detail' post.slug %}">
+										<p></p>
+										<button type="submit" class="btn btn-primary"
+											style="height:33px;width:87px;line-height: 50px">
+											<h6>Leer más</h6>
+										</button>
+									</a>-->
+									
+									<ul class="post-info">
+										<p></p>
+										<p style="color: rgb(255, 255, 255) ;">{{ post.date_added }}</p>
+									</ul>
+								</div>
+							</div>
+						</div>
+			
+						{% endfor %}
+					</div>
+			
+				
+			
+		</div>
+		<div class="col-md-4 pl-4">
+            <h5 class="font-weight-bold spanborder"><span>Recientes</span></h5>
+			<ol class="list-featured">
+				<li>
+				<span>
+				<h6 class="font-weight-bold">
+				<a href="" class="text-dark">recientes 1</a>
+				</h6>
+				<p class="text-muted">
+					Coment
+				</p>
+				</span>
+				</li>
+				<li>
+				<span>
+				<h6 class="font-weight-bold">
+				<a href="" class="text-dark">recientes 2</a>
+				</h6>
+				<p class="text-muted">
+					coment
+				</p>
+				</span>
+				</li>
+				<li>
+				<span>
+				<h6 class="font-weight-bold">
+				<a href="" class="text-dark">recientes 3</a>
+				</h6>
+				<p class="text-muted">
+					coment
+				</p>
+				</span>
+				</li>
+				<li>
+				<span>
+				<h6 class="font-weight-bold">
+				<a href="" class="text-dark">recientes 4</a>
+				</h6>
+				<p class="text-muted">
+					coment
+				</p>
+				</span>
+				</li>
+			</ol>
+		</div>
+	</div>
+</div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--Carousel-->
+<!--
 <div class="main-banner header-text">
     <div class="container-fluid">
         <div class="owl-banner owl-carousel">
@@ -11,13 +203,16 @@
 
             <div class="item">
                 <div class="meta-category">
-                    <!--    <a href="{% url 'posts:post_detail' post.slug %}">-->
+                    <!-<a href="{% url 'posts:post_detail' post.slug %}">-->
+                    <!--
                     <span style="color:rgb(43, 30, 7)">
                         <h5><b>
                                 <center>{{ post.title }}</center>
                             </b></h5>
                     </span>
-                    <!--</a>-->
+                    </a>-->
+                <!--
+                
                 </div>
                 <img src="{{ post.imagen.url }}" alt="" width="300" height="300">
                 <div class="item-content">
@@ -31,9 +226,10 @@
                                 <h6>Leer más</h6>
                             </button>
                         </a>-->
+                        <!--
                         <ul class="post-info">
                             <p></p>
-                            <p>{{ post.date_added }}</p>
+                            <p style="color: rgb(255, 255, 255) ;">{{ post.date_added }}</p>
                         </ul>
                     </div>
                 </div>
@@ -44,9 +240,8 @@
 
     </div>
 </div>
-
-
-<!--VIDEO-->
+VIDEO-->
+<!--
 <div class="main-nammer header-text">
     <div class="scale-video">
 
@@ -57,5 +252,5 @@
                 </video></p>
         </body>
     </div>
-</div>
+</div>-->
 {% endblock %}
