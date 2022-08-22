@@ -92,14 +92,14 @@
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="admin/" style="color:rgb(5, 161, 0)">ADMINISTRAR WEB</a>
+              <a class="nav-link" href="../admin/" style="color:rgb(5, 161, 0)">ADMINISTRAR SITIO</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'usuarios:logout' %}">SALIR</a>
             </li>
             {% else %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'usuarios:login' %}">INGRESAR</a>
+              <a class="nav-link" href="{% url 'usuarios:login' %}">ENTRAR</a>
             </li>
             {% endif %}
             <nav class="navbar navbar-dark bg-dark">
