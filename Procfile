@@ -1,0 +1,1 @@
+web: gunicorn ProyectoInfo2022.wsgi

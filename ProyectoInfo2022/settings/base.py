@@ -11,6 +11,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 
+import django_heroku #config servidor heroku
+import dj_database_url #ayuda con db
+from decouple import config #variables de entorno
+
+
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -21,12 +26,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u0943nn*32f6tz&%*c&dpokg-h&!^-m$_9$!j)@h%nm5fqui@w'
+#SECRET_KEY = 'django-insecure-u0943nn*32f6tz&%*c&dpokg-h&!^-m$_9$!j)@h%nm5fqui@w'
+
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://info2022.herokuapp.com/',]
 
 
 # Application definition
@@ -47,6 +54,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #esta es la posición adecuada
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -60,7 +68,7 @@ ROOT_URLCONF = 'ProyectoInfo2022.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022\\templates')],
+        'DIRS': [os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -125,17 +133,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022/staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022\static'),
+STATICFILES_DIRS = [ os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022/static'),
 ]
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-]
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+
+
+#STATICFILES_FINDERS = [
+#    'django.contrib.staticfiles.finders.FileSystemFinder',
+#    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#]
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022\media')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022/media')
 
 
 
@@ -143,3 +157,6 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'ProyectoInfo2022\media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#settings->heroku
+django_heroku.settings(locals())
