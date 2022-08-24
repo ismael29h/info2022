@@ -13,7 +13,7 @@ import os
 
 import django_heroku #config servidor heroku
 import dj_database_url #ayuda con db
-from decouple import config #variables de entorno
+from decouple import config #variables alojadas en heroku
 
 
 from pathlib import Path
@@ -31,9 +31,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 
-ALLOWED_HOSTS = ['https://vientosdecambio.herokuapp.com/',]
+ALLOWED_HOSTS = ['info2022.herokuapp.com']
 
 
 # Application definition
