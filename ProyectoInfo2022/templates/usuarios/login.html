@@ -1,38 +1,39 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<hr>
-<hr>
-<hr>
-<hr>
-<form action="login.html" method="post" class="form-horizontal">
-    {% csrf_token%}
-    <div class="mx-auto" style="width: 400px;">
-        <div class="col-xs-8 col-xs-offset-4">
-            <h2 style="text-align:center;">INICIO DE SESIÓN</h2>
-        </div>
-        <hr>
 
-        <div class="form-group">
-            <label for="username">Nombre de usuario &colon;</label>
-            <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su usuario">
-        </div>
-        <div class="form-group">
-            <label for="password">Contraseña &colon;</label>
-            <input type="password" class="form-control" name="password" id="password"
-                placeholder="Ingrese su contraseña">
-        </div>
-        <button type="submit" class="btn btn-primary" style="height:37px;width:113px;line-height: 10px">Iniciar
-            sesión</button>
+<section class="about-us">
+    <div class="container">
+        <form action="login.html" method="post" class="form-horizontal">
+            {% csrf_token%}
+            <div class="mx-auto" style="width: 400px;">
+                <div class="col-xs-8 col-xs-offset-4">
+                    <h2 style="text-align:center;">INICIO DE SESIÓN</h2>
+                </div>
+                <hr>
 
-        <div class="form-group">
-            {% for message in messages %}
-            <div class="alert alert-danger" role="alert">
-                {{message}}
+                <div class="form-group">
+                    <label for="username">Nombre de usuario &colon;</label>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Ingrese su usuario">
+                </div>
+                <div class="form-group">
+                    <label for="password">Contraseña &colon;</label>
+                    <input type="password" class="form-control" name="password" id="password"
+                        placeholder="Ingrese su contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary" style="height:37px;width:113px;line-height: 10px">Iniciar
+                    sesión</button>
+
+                <div class="form-group">
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                        {{message}}
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
-            {% endfor %}
-        </div>
+        </form>
     </div>
-</form>
+</section>
 
 {% endblock %}
